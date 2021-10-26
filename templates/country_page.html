@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            width: 80%;
+            margin: auto;
+        }
+        table{
+            width: 80%;
+            margin: auto;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>United States Wealth Inequality and Forest Density Stats</h1>
+    <table>
+        <thead>
+            <tr>
+                <td>State</td>
+                <td>Gini Index</td>
+                <td>Poverty Rate</td>
+                <td>Forest Density</td>
+            </tr>
+        </thead>
+        <tbody>
+        {% for row in table %}
+            <tr>
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+                <td>{{row[2]}}</td>
+                <td>{{forest_density}}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
