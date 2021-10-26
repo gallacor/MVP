@@ -1,0 +1,16 @@
+.data_table{
+    border: solid black 5px;
+    color: red;
+    font-size: 14px;
+}
+table td {
+    border:solid black 2px;
+}
+body{
+    width: 80%;
+    margin: auto;
+}
+table{
+    width: 80%;
+    margin: auto;
+ }
