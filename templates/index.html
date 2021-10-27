@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/styles.css') }}" />
 </head>
 <body>
 <h1>Welcome to the wealth inequality vs forest density app</h1>
-<form action="/state_or_country" method="POST">
+<form action="/state_data" method="POST">
     <label for="state">Please enter the State you would like to retrieve the wealth inequality and forest density data for</label>
     <select name="state" id="state">
         <option value= "Alabama" >Alabama</option>
@@ -62,9 +63,12 @@
         <option value= "Wisconsin" >Wisconsin</option>
         <option value= "Wyoming" >Wyoming</option>
     </select>
-    <label>Otherwise, if you'd like to view wealthy inequality and forest data for the whole United States click the checkbox</label>
-    <input type="radio" name="country" id="country" value="True">
-    <input type="submit" value="generate data">
-</form>
+    <input type="submit" value="generate state data">
+    </form>
+    <form action="/country_view" method="POST">
+        <label>Otherwise, if you'd like to view wealthy inequality and forest data for the whole United States click the checkbox</label>
+        <input type="checkbox" name="country" id="country" value="True" required="required">
+        <input type="submit" value="generate country data">
+    </form>
 </body>
 </html>

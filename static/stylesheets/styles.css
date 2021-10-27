@@ -1,16 +1,43 @@
 .data_table{
     border: solid black 5px;
-    color: red;
-    font-size: 14px;
+    color: gray;
 }
 table td {
     border:solid black 2px;
+    margin: 2em;
+    size: 18px;
+}
+table th {
+    border:solid black 2px;
+    margin: 2em;
+    size: 18px;
+    text-decoration: bold;
 }
 body{
     width: 80%;
     margin: auto;
 }
+ul{
+    margin: 1.5em auto;
+    width: 80%;
+}
+h1{
+    margin: auto;
+    width: 80%;
+}
 table{
     width: 80%;
     margin: auto;
+    border-spacing:0; /* Removes the cell spacing via CSS */
+    border-collapse: collapse;
+ }
+
+ form{
+    margin: 1.5em auto;
+    width: 80%;
+ }
+
+ form label{
+    size: 18px;
+    font-weight: 700;
  }
