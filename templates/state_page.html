@@ -8,10 +8,11 @@
 <body>
 <h1>Wealth Inequality Stats for {{state}}</h1>
 <ul>
-    <li>The gini index for {{state}} is {{gini_index}}</li>
-    <li>The poverty rate for {{state}} is {{poverty_rate}}</li>
-    <li>The forest density for {{state}} is {{forest_density}}</li>
+    <li>The gini index for {{state}} is {{gini_index}} <em>(gini_index measures the wealth inequalty of an area.)</em></li>
+    <li>The poverty rate for {{state}} is {{poverty_rate}} <em>(this number comes from the most recent US Census) </em></li>
+    <li>The forest density for {{state}} is {{forest_density}} <em>(This given in a metric of average forest prescene per square KM.)</em></li>
 
+</ul>
 </ul>
 <form action="/state_data" method="POST">
     <label for="state">Please enter the State you would like to retrieve the wealth inequality and forest density data for</label>
