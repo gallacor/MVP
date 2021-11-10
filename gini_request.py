@@ -1,4 +1,3 @@
-import homepage
 import os
 
 gini_dict = {'Utah':	0.4063,
@@ -65,15 +64,12 @@ def gini_request():
 
 
 def gini_response(request):
-    # if request not in gini_dict.keys():
-    #     send_error()
-    # else:
-    #     send_response(request)
     try:
         send_response(request)
     except KeyError:
-        pass
+        send_error()
     delete_file()
+
 
 
 def send_response(request_text):

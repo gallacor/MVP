@@ -1,4 +1,4 @@
-
+from request_forest import *
 poverty_dict = {'New Hampshire':	7.3,
 'Utah':	8.9,
 'Maryland':	9.0,
@@ -99,12 +99,10 @@ gini_dict = {'Utah':	0.4063,
 "Mississippi":	0.4828,
 "Alabama":	0.4847,
 "Florida":	0.4852,
-"United States":	0.486,
 "California":	0.4899,
 "Connecticut":	0.4945,
 "Louisiana":	0.4990,
-"New York":	0.5229,
-"District of Columbia":	0.5420 }
+"New York":	0.5229 }
 
 def create_table():
     #create table the length of the dictionaries
@@ -113,14 +111,22 @@ def create_table():
         table.append([])
     #populate table using the dictionaries
     row_counter = 0
-    for state in gini_dict.keys():
+    list_of_states = list(gini_dict.keys())
+    list_of_states.sort()
+    print(list_of_states)
+    for state in list_of_states:
         table[row_counter].append(state)
         table[row_counter].append(gini_dict[state])
-        table[row_counter].append(poverty_dict[state])
+        poverty_rate = str(poverty_dict[state]) + "%"
+        table[row_counter].append(poverty_rate)
+        # get forest density data for state
+        forest_data = get_forest_data(state)
+        state_requested = forest_data[0]
+        forest_density = forest_data[1]
+        print(state_requested + " " + forest_density)
+        table[row_counter].append(forest_density)
         row_counter += 1
     table.sort()
-    print(table)
     return table
-
 
 
