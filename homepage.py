@@ -21,8 +21,7 @@ def populate_table(table, list_of_states):
         table[row_counter].append(poverty_rate)
         # get forest density data for state
         forest_data = get_forest_data(state)
-        state_requested = forest_data[0]
-        forest_density = forest_data[1]
+        forest_density = forest_data
         table[row_counter].append(forest_density)
         row_counter += 1
     table.sort()

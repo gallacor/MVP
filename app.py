@@ -19,7 +19,8 @@ def state_page():
     poverty_rate = poverty_dict[state]
     gini_index = gini_dict[state]
     response_data = get_forest_data(state)
-    forest_density = response_data[1]
+    print(response_data)
+    forest_density = response_data
     return render_template('state_page.html', poverty_rate=poverty_rate, gini_index=gini_index, state=state,
                            forest_density=forest_density)
 
