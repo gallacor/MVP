@@ -28,7 +28,8 @@ def country_view():
 
 
 def country_page_unsorted():
-    table = create_table()
+    table_skeleton = generate_table()
+    table = populate_table(table_skeleton)
     return render_template('country_page.html', table=table)
 
 
