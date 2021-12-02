@@ -20,7 +20,8 @@ def state_page():
     gini_index = gini_dict[state]
     response_data = get_forest_data(state)
     forest_density = response_data[1]
-    return render_template('state_page.html', poverty_rate=poverty_rate, gini_index=gini_index, state=state, forest_density=forest_density)
+    return render_template('state_page.html', poverty_rate=poverty_rate, gini_index=gini_index, state=state,
+                           forest_density=forest_density)
 
 @app.route("/country_view", methods=['POST'])
 def country_view():
@@ -28,8 +29,8 @@ def country_view():
 
 
 def country_page_unsorted():
-    table_skeleton = generate_table()
-    table = populate_table(table_skeleton)
+    table_guide = generate_table()
+    table = populate_table(table_guide[0], table_guide[1])
     return render_template('country_page.html', table=table)
 
 
